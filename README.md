@@ -15,4 +15,10 @@ Application of Material Design to qooxdoo Framework
     }
 }
 ```
-3. Use QxMaterial components.
+3. Add Google MDL script/css to the index.html:
+```html
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css">
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+```
+4. Use QxMaterial components.
