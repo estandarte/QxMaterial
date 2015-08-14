@@ -1,23 +1,28 @@
 {
-    "info": {
-        "name": "QxMaterial",
-        "summary": "Material Support for Qooxdoo framework.",
-        "description": "Material Support for Qooxdoo framework.",
-        "homepage": "https://github.com/Estandarte/QxMaterial/",
-        "license": "GNU License",
-        "authors": [{
-                "name": "Leandro Chaves",
-                "email": "leandrorchaves@gmail.com"
-            }],
-        "version": "0.1",
-        "qooxdoo-versions": ["5.0"]
-    },
-    "provides": {
-        "namespace": "qxm",
-        "encoding": "utf-8",
-        "class": "source/class",
-        "resource": "source/resource",
-        "translation": "source/translation",
-        "type": "library"
-    }
+  "info" :
+  {
+    "name" : "QxMaterial",
+    "summary": "Material Support for Qooxdoo framework.",
+    "description": "Material Support for Qooxdoo framework.",
+    "homepage": "https://github.com/Estandarte/QxMaterial/",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Leandro Chaves",
+            "email": "leandrorchaves@gmail.com"
+        }
+    ],
+    "version": "0.1",
+    "qooxdoo-versions": ["5.0.1"]
+  },
+
+  "provides" :
+  {
+    "namespace"   : "qxm",
+    "encoding"    : "utf-8",
+    "class"       : "source/class",
+    "resource"    : "source/resource",
+    "translation" : "source/translation",
+    "type"        : "library"
+  }
 }
