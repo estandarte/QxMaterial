@@ -28,6 +28,13 @@
  */
 qx.Class.define("qxm.ui.form.Button", {
     extend: qx.ui.form.Button,
+    include: [qxm.MMaterial],
+    properties: {
+        'class': {
+            check: 'String',
+            init: 'mdl-button mdl-js-button mdl-button--raised'
+        }
+    },
     /**
      * @param label {String} label of the atom
      * @param icon {String?null} Icon URL of the atom
@@ -35,5 +42,34 @@ qx.Class.define("qxm.ui.form.Button", {
      */
     construct: function(label, icon, command) {
         this.base(arguments, label, icon, command);
+    },
+    members: {
+        // overridden
+        _createChildControlImpl: function(id, hash) {
+            var control;
+
+            switch (id) {
+                case "label":
+                    control = new qxm.ui.basic.Label(this.getLabel());
+                    control.setAnonymous(true);
+                    control.setRich(this.getRich());
+                    this._add(control);
+                    if (this.getLabel() == null || this.getShow() === "icon") {
+                        control.exclude();
+                    }
+                    break;
+
+                case "icon":
+                    control = new qx.ui.basic.Image(this.getIcon());
+                    control.setAnonymous(true);
+                    this._addAt(control, 0);
+                    if (this.getIcon() == null || this.getShow() === "label") {
+                        control.exclude();
+                    }
+                    break;
+            }
+
+            return control || this.base(arguments, id);
+        }
     }
 });
