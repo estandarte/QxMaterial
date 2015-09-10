@@ -44,19 +44,33 @@ qx.Class.define("qxm.ui.form.Button", {
         this.base(arguments, label, icon, command);
     },
     members: {
+        _applyLabel: function(value, old) {
+            // Sync with content element
+            console.log(this.getContentElement());
+            this.getContentElement().setValue(value);
+
+            // Mark text size cache as invalid
+            this.__invalidContentSize = true;
+
+            // Update layout
+            qx.ui.core.queue.Layout.add(this);
+        },
+        _createContentElement: function() {
+            return new qx.html.Label;
+        },
         // overridden
         _createChildControlImpl: function(id, hash) {
             var control;
 
             switch (id) {
                 case "label":
-                    control = new qxm.ui.basic.Label(this.getLabel());
+                    control = this;
                     control.setAnonymous(true);
                     control.setRich(this.getRich());
-                    this._add(control);
-                    if (this.getLabel() == null || this.getShow() === "icon") {
-                        control.exclude();
-                    }
+                    // this._add(control);
+                    // if (this.getLabel() == null || this.getShow() === "icon") {
+                    //     control.exclude();
+                    // }
                     break;
 
                 case "icon":

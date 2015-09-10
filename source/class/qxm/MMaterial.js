@@ -2,6 +2,7 @@ qx.Mixin.define("qxm.MMaterial", {
     properties: {},
     members: {
         syncAppearance: function() {
+            this.getContentElement().removeClass(this.getContentElement().getAttribute('class'));
             this.getContentElement().addClass(this.getClass());
         },
         _applyDimension: function() {
