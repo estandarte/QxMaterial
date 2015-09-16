@@ -46,7 +46,6 @@ qx.Class.define("qxm.ui.form.Button", {
     members: {
         _applyLabel: function(value, old) {
             // Sync with content element
-            console.log(this.getContentElement());
             this.getContentElement().setValue(value);
 
             // Mark text size cache as invalid
@@ -56,7 +55,7 @@ qx.Class.define("qxm.ui.form.Button", {
             qx.ui.core.queue.Layout.add(this);
         },
         _createContentElement: function() {
-            return new qx.html.Label;
+            return new qxm.html.Label;
         },
         // overridden
         _createChildControlImpl: function(id, hash) {

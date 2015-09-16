@@ -22,6 +22,16 @@ qx.Class.define("qxm.Application", {
                 qx.log.appender.Native;
             }
 
+        },
+        finalize: function() {
+            this.base(arguments);
+            console.log('Has finished!');
+            componentHandler.upgradeDom();
+        },
+        render: function() {
+            this.base(arguments);
+            console.log('Has finished!');
+            componentHandler.upgradeDom();
         }
     }
 });
