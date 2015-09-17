@@ -49,6 +49,11 @@ qx.Class.define("qxm.ui.form.MTextField", {
         'class': {
             check: 'String',
             init: 'mdl-textfield mdl-js-textfield'
+        },
+        label: {
+            check: 'String',
+            init: '',
+            apply: '_applyLabel'
         }
     },
 
@@ -77,6 +82,9 @@ qx.Class.define("qxm.ui.form.MTextField", {
         componentHandler.upgradeDom();
     },
     members: {
+        _applyLabel: function(value) {
+            this.getChildControl("label").setValue(value);
+        },
         /**
          * This method sets the date, which will be formatted according to
          * #dateFormat to the date field. It will also select the date in the
