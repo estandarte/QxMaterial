@@ -37,17 +37,20 @@
  */
 qx.Class.define("qxm.ui.basic.Label", {
     extend: qx.ui.basic.Label,
-    include: [qxm.MMaterial],
+    include: [
+        qxm.MMaterial//,
+        // qxm.ui.core.MWidgetStyle
+    ],
     properties: {
         'class': {
             check: "String",
             init: ''
         }
+    },
     // },
     // construct: function(){
     //     this.base(arguments);
     //     // this.getContentElement().setStyle('position','inherit');
-    },
     members: {
 
     }

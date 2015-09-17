@@ -1,0 +1,6 @@
+.layout_vbox > * {
+    display: block;
+}
+.layout_hbox > * {
+    display: inline-block;
+}

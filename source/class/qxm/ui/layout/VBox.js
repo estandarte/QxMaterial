@@ -66,6 +66,8 @@ qx.Class.define("qxm.ui.layout.VBox", {
 
         // overridden
         renderLayout: function(availWidth, availHeight, padding) {
+            console.log('I\'m Here!');
+            this.__widget.addClass('layout_vbox');
             // // Rebuild flex/height caches
             // if (this._invalidChildrenCache) {
             //     this.__rebuildCache();
